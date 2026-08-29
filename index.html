@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eko Bright — I Turn Clicks Into Bookings</title>
+<meta name="description" content="Home service marketing specialist from Indonesia. I turn clicks into bookings — proven on my own business with 800+ bookings a month, zero storefront. Book a free 30-min strategy call.">
+<link rel="canonical" href="https://eko.trigia.id/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eko.trigia.id/">
+<meta property="og:title" content="Eko Bright — I Turn Clicks Into Bookings">
+<meta property="og:description" content="Home service marketing specialist from Indonesia. I turn clicks into bookings — proven on my own business with 800+ bookings a month, zero storefront.">
+<meta property="og:image" content="https://eko.trigia.id/images/eko-photo.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eko Bright — I Turn Clicks Into Bookings">
+<meta name="twitter:description" content="Home service marketing specialist from Indonesia. I turn clicks into bookings — proven on my own business with 800+ bookings a month, zero storefront.">
+<meta name="twitter:image" content="https://eko.trigia.id/images/eko-photo.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308080c'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%2310d9a3' stroke-width='3'/%3E%3Cpath d='M39 21c-11-4-20 2-20 11s9 15 20 11' fill='none' stroke='%238b5cf6' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -819,6 +830,15 @@ nav.scrolled{
 .how-card:hover:before{opacity:1}
 .how-card .how-num,.how-card h3,.how-card p{position:relative;z-index:1}
 
+/* FAQ — native <details>/<summary>, no extra JS */
+.faq-list{max-width:760px}
+.faq-item{border-bottom:1px solid var(--border);padding:22px 0}
+.faq-item summary{cursor:pointer;font-family:'Sora';font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--text)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:after{content:'+';color:var(--green);font-size:22px;font-weight:400;transition:.3s;flex-shrink:0}
+.faq-item[open] summary:after{transform:rotate(45deg)}
+.faq-item p{color:var(--muted);font-size:13.5px;line-height:1.7;margin-top:14px;max-width:640px}
+
 </style>
 </head>
 <body>
@@ -1128,6 +1148,40 @@ nav.scrolled{
 </section>
 
 
+<section id="faq">
+  <div class="container">
+    <div class="tag reveal">FAQ</div>
+    <h2 class="reveal">Before you book the call</h2>
+    <p class="section-sub reveal">Straight answers to what people usually ask before we talk.</p>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>Berapa biaya kerja samanya?</summary>
+        <p>Setiap bisnis beda kebutuhan, jadi saya tidak pasang harga generic di sini. Di free call, saya dengar dulu situasi Anda, baru kasih penawaran yang sesuai — bukan paket template.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Berapa lama sampai lihat hasil?</summary>
+        <p>Untuk perbaikan cepat (landing page, WhatsApp funnel) biasanya terlihat dalam 2-4 minggu pertama. Untuk pertumbuhan organik dan sistem retensi, butuh 2-3 bulan konsisten sebelum hasilnya stabil.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Ada kontrak minimum?</summary>
+        <p>Saya lebih suka buktikan hasil dulu lewat proyek awal yang jelas scope-nya, baru lanjut retainer bulanan kalau memang cocok. Tidak ada kontrak tahunan yang mengikat di awal.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Bagaimana kalau hasilnya tidak sesuai ekspektasi?</summary>
+        <p>Kita bahas dari awal target realistis berdasarkan kondisi bisnis Anda. Kalau di tengah jalan ada yang tidak sesuai, saya laporkan terbuka dan kita sesuaikan strategi bareng — bukan tunggu sampai kontrak habis baru dibahas.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Apakah Anda kerja sendiri atau ada tim?</summary>
+        <p>Saya yang pegang langsung strategi dan eksekusi utama, dibantu tim kecil untuk produksi konten dan development saat dibutuhkan. Tidak ada handoff ke account manager yang tidak paham detail bisnis Anda.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Apakah bisa kerja dengan bisnis di luar Indonesia?</summary>
+        <p>Fokus utama saya saat ini bisnis lokal Indonesia, khususnya home service, karena playbook ini paling teruji di pasar ini. Untuk luar Indonesia, kita diskusikan dulu kecocokannya di free call.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="how-i-work">
   <div class="container">
     <div class="tag reveal">How I Work</div>
@@ -1175,6 +1229,7 @@ nav.scrolled{
       <a href="https://calendly.com/ekobright/30min" class="btn-primary">Book a Free 30-min Call</a>
       <a href="https://wa.me/6281232845169" class="btn-ghost">💬 WhatsApp Me</a>
     </div>
+    <p style="margin-top:18px;font-size:12px;color:var(--muted)">Prefer email? <a href="mailto:ekosus4nt@gmail.com" style="color:var(--green);font-weight:600">ekosus4nt@gmail.com</a></p>
   </div>
 </section>
 
