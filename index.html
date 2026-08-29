@@ -782,6 +782,43 @@ footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color
   html{scroll-behavior:auto}
 }
 
+
+/* V11 — INTERACTIVE MOTION (cursor-driven)
+   Visual-only. All cursor effects are JS-gated to (hover:hover)+(pointer:fine)
+   and disabled under prefers-reduced-motion. Nav-scroll runs on every device.
+   No text content or layout structure changed. */
+
+/* 5) Nav changes on scroll */
+nav{transition:background .32s ease,box-shadow .32s ease,top .32s ease,border-color .32s ease}
+nav.scrolled{
+  top:8px;
+  background:rgba(9,9,13,.93);
+  border-color:rgba(255,255,255,.13);
+  box-shadow:0 22px 60px rgba(0,0,0,.55)
+}
+
+/* 3) Magnetic buttons — quicker transform so the pull tracks the cursor */
+.btn-primary,.btn-ghost,.nav-cta{
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,
+             border-color .28s ease,color .28s ease,background .28s ease
+}
+
+/* 4) Cursor-following spotlight on cards */
+.service,.proof-card,.how-card{--mx:50%;--my:50%}
+.service:before{
+  background:radial-gradient(circle at var(--mx) var(--my),rgba(16,217,163,.14),transparent 44%)
+}
+.proof-card:before{
+  background:radial-gradient(circle at var(--mx) var(--my),rgba(139,92,246,.15),transparent 46%)
+}
+.how-card:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at var(--mx) var(--my),rgba(16,217,163,.13),transparent 46%);
+  opacity:0;transition:opacity .35s ease
+}
+.how-card:hover:before{opacity:1}
+.how-card .how-num,.how-card h3,.how-card p{position:relative;z-index:1}
+
 </style>
 </head>
 <body>
@@ -1165,6 +1202,106 @@ const counterObs = new IntersectionObserver(entries=>{
   });
 },{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
+</script>
+
+<script>
+/* V11 — interactive motion. Additive only: no existing behaviour is altered. */
+(function(){
+  var nav = document.querySelector('nav');
+
+  /* 5) Nav gets .scrolled past 40px — allowed on every device */
+  if(nav){
+    var syncNav = function(){
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    syncNav();
+    window.addEventListener('scroll', syncNav, {passive:true});
+  }
+
+  /* Everything below is cursor-driven: only for real pointers, and never when
+     the user asked for reduced motion. */
+  var finePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!finePointer || reduceMotion) return;
+
+  /* 1) Hero cursor-light follows the mouse inside .hero */
+  var hero = document.querySelector('.hero');
+  var cursorLight = document.querySelector('.hero-cursor-light');
+  if(hero && cursorLight){
+    hero.addEventListener('mousemove', function(e){
+      var r = hero.getBoundingClientRect();
+      cursorLight.style.left = (e.clientX - r.left) + 'px';
+      cursorLight.style.top  = (e.clientY - r.top)  + 'px';
+    });
+  }
+
+  /* 2) 3D tilt on the profile photo, driven by cursor position in .photo-wrap */
+  var photoWrap  = document.querySelector('.photo-wrap');
+  var photoFrame = photoWrap ? photoWrap.querySelector('.photo-frame') : null;
+  if(photoWrap && photoFrame){
+    photoWrap.addEventListener('mousemove', function(e){
+      var r  = photoFrame.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width  - 0.5;
+      var py = (e.clientY - r.top)  / r.height - 0.5;
+      var ry = (px * 16).toFixed(2);
+      var rx = (py * -14).toFixed(2);
+      photoFrame.style.transition = 'transform .12s ease-out, box-shadow .5s ease';
+      photoFrame.style.transform  = 'rotateY(' + ry + 'deg) rotateX(' + rx + 'deg) translateZ(0)';
+    });
+    photoWrap.addEventListener('mouseleave', function(){
+      photoFrame.style.transition = '';   /* back to the stylesheet's .7s ease */
+      photoFrame.style.transform  = '';   /* back to the base rotateY(-4deg) rotateX(2deg) */
+    });
+  }
+
+  /* 3) Magnetic pull on the main buttons */
+  document.querySelectorAll('.btn-primary, .btn-ghost, .nav-cta').forEach(function(btn){
+    btn.addEventListener('mousemove', function(e){
+      var r  = btn.getBoundingClientRect();
+      var mx = e.clientX - r.left - r.width  / 2;
+      var my = e.clientY - r.top  - r.height / 2;
+      btn.style.transform = 'translate(' + (mx * 0.3).toFixed(2) + 'px,' + (my * 0.35).toFixed(2) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function(){
+      btn.style.transform = '';
+    });
+  });
+
+  /* 4) Spotlight hover: feed cursor position into --mx / --my per card */
+  document.querySelectorAll('.service, .proof-card, .how-card').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top)  + 'px');
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.setProperty('--mx', '50%');
+      card.style.setProperty('--my', '50%');
+    });
+  });
+
+  /* 6) Light parallax on the hero decorative background */
+  var heroBg = document.querySelector('.hero-grid-bg');
+  if(heroBg){
+    var lastY = window.scrollY, ticking = false;
+    var draw = function(){
+      heroBg.style.transform = 'translateY(' + (lastY * 0.22).toFixed(1) + 'px)';
+      ticking = false;
+    };
+    window.addEventListener('scroll', function(){
+      lastY = window.scrollY;
+      if(!ticking){ requestAnimationFrame(draw); ticking = true; }
+    }, {passive:true});
+    draw();
+  }
+
+  /* 7) Pause the marquee while it is hovered */
+  var marquee = document.querySelector('.marquee-track');
+  if(marquee){
+    marquee.addEventListener('mouseenter', function(){ marquee.style.animationPlayState = 'paused';  });
+    marquee.addEventListener('mouseleave', function(){ marquee.style.animationPlayState = 'running'; });
+  }
+})();
 </script>
 </body>
 </html>
