@@ -164,7 +164,7 @@ h1{
 
 /* STATS */
 .stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:78px 0 28px
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:78px 0 28px
 }
 .stat{
   background:linear-gradient(145deg,rgba(18,18,26,.95),rgba(14,14,20,.95));
@@ -908,8 +908,7 @@ section[id]{scroll-margin-top:100px}
   <div class="stats">
     <div class="stat reveal"><div class="num" data-count="800">0</div><div class="lbl" data-i18n="stat_lbl1">Bookings / Month</div></div>
     <div class="stat reveal d1"><div class="num" data-count="95" data-suffix="%">0</div><div class="lbl" data-i18n="stat_lbl2">Customers From Online</div></div>
-    <div class="stat reveal d2"><div class="num" data-count="8500" data-prefix="$">$0</div><div class="lbl" data-i18n="stat_lbl3">Monthly Revenue (est.)</div></div>
-    <div class="stat reveal d3"><div class="num" data-count="0" data-prefix="$">$0</div><div class="lbl" data-i18n="stat_lbl4">Spent on Fake Followers</div></div>
+    <div class="stat reveal d2"><div class="num" data-count="0" data-prefix="$">$0</div><div class="lbl" data-i18n="stat_lbl4">Spent on Fake Followers</div></div>
   </div>
 
 </div>
@@ -967,7 +966,6 @@ section[id]{scroll-margin-top:100px}
         <div class="case-label" data-i18n="cs1_label3">The Results</div>
         <ul class="case-list">
           <li data-i18n="cs1_res1"><b>800+ treatments booked monthly</b>, consistently</li>
-          <li data-i18n="cs1_res2">~$8,500 USD monthly revenue, no storefront, no foot traffic</li>
           <li data-i18n="cs1_res3">~95% of customers acquired through digital channels</li>
           <li data-i18n="cs1_res4">Repeat customers rebooking via WhatsApp — no additional ad cost</li>
         </ul>
@@ -1151,22 +1149,40 @@ section[id]{scroll-margin-top:100px}
         <p data-i18n="svc1_p">Strategy, targeting &amp; ad creatives — tested first on my own ad accounts before running yours.</p>
       </div>
       <div class="service reveal d1">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:8px" data-i18n="svc1b_kicker">ACQUISITION</div>
+        <h3 data-i18n="svc1b_h3">Google Ads &amp; CPAS</h3>
+        <p data-i18n="svc1b_p">Search and Collaborative Performance Ads campaigns — built to capture demand that's already looking for you.</p>
+      </div>
+      <div class="service reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="3" width="11" height="18" rx="2"/><path d="M10 18h4"/></svg></div>
-        <div style="font-size:9px;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:8px">ACQUISITION</div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:8px" data-i18n="svc2_kicker">ACQUISITION</div>
         <h3 data-i18n="svc2_h3">Organic Social Growth</h3>
         <p data-i18n="svc2_p">Real followers who actually convert — through content strategy, not bots or bought audiences.</p>
       </div>
       <div class="service reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.5 3.5 5.3 3.5 8.5S14.3 18 12 20.5M12 3.5C9.7 6 8.5 8.8 8.5 12s1.2 6 3.5 8.5"/></svg></div>
-        <div style="font-size:9px;letter-spacing:1.5px;color:var(--purple);font-weight:800;margin-bottom:8px">CONVERSION</div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--purple);font-weight:800;margin-bottom:8px" data-i18n="svc3_kicker">CONVERSION</div>
         <h3 data-i18n="svc3_h3">Booking-Driven Websites</h3>
         <p data-i18n="svc3_p">Not pretty brochures — pages and WhatsApp flows engineered to turn visitors into booked customers.</p>
       </div>
       <div class="service reveal d3">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h11l-2.5-2.5M19 16H8l2.5 2.5"/><path d="M16 8l2.5 2.5L16 13M8 16l-2.5-2.5L8 11"/></svg></div>
-        <div style="font-size:9px;letter-spacing:1.5px;color:var(--pink);font-weight:800;margin-bottom:8px">RETENTION</div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--pink);font-weight:800;margin-bottom:8px" data-i18n="svc4_kicker">RETENTION</div>
         <h3 data-i18n="svc4_h3">Loyalty &amp; Repeat-Booking Systems</h3>
         <p data-i18n="svc4_p">Points, referrals, and WhatsApp retention flows — the same system behind Rumi Inner Circle.</p>
+      </div>
+      <div class="service reveal d3">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--pink);font-weight:800;margin-bottom:8px" data-i18n="svc4b_kicker">RETENTION</div>
+        <h3 data-i18n="svc4b_h3">WhatsApp Business API &amp; Automation</h3>
+        <p data-i18n="svc4b_p">Official WABA integration with broadcast flows that bring customers back — without extra ad spend.</p>
+      </div>
+      <div class="service reveal d3">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l1.8 1.8M16.2 16.2 18 18M18 6l-1.8 1.8M6 18l1.8-1.8"/></svg></div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:#60a5fa;font-weight:800;margin-bottom:8px" data-i18n="svc5_kicker">TECH &amp; SYSTEMS</div>
+        <h3 data-i18n="svc5_h3">Custom Systems &amp; Automation</h3>
+        <p data-i18n="svc5_p">Booking platforms, member dashboards, and business automation — built in-house, not assembled from templates.</p>
       </div>
     </div>
   </div>
@@ -1409,7 +1425,6 @@ const i18nDict = {
     photo_badge: "<b>800+</b>booking / bulan",
     stat_lbl1: "Booking / Bulan",
     stat_lbl2: "Pelanggan Dari Online",
-    stat_lbl3: "Pendapatan Bulanan (estimasi)",
     stat_lbl4: "Dana untuk Followers Palsu",
     stack_tag: "Growth Stack-nya",
     stack_h2: "Satu sistem. Tiga tugas.",
@@ -1426,7 +1441,6 @@ const i18nDict = {
     cs1_li4: "Merancang siklus booking berulang lewat WhatsApp — retention tanpa biaya iklan tambahan",
     cs1_label3: "Hasilnya",
     cs1_res1: "<b>800+ treatment dibooking setiap bulan</b>, secara konsisten",
-    cs1_res2: "~$8,500 USD pendapatan bulanan, tanpa toko fisik, tanpa foot traffic",
     cs1_res3: "~95% pelanggan diperoleh lewat kanal digital",
     cs1_res4: "Pelanggan repeat booking ulang lewat WhatsApp — tanpa biaya iklan tambahan",
     cs1_link: "Kunjungi rumihomespa.com ↗",
@@ -1475,12 +1489,24 @@ const i18nDict = {
     svc1_kicker: "ACQUISITION",
     svc1_h3: "Meta &amp; TikTok Ads",
     svc1_p: "Strategi, targeting, dan materi iklan — diuji dulu di akun iklan saya sendiri sebelum dijalankan di akun Anda.",
+    svc1b_kicker: "ACQUISITION",
+    svc1b_h3: "Google Ads &amp; CPAS",
+    svc1b_p: "Campaign Search dan Collaborative Performance Ads — dibuat untuk menangkap calon pelanggan yang memang sedang mencari Anda.",
+    svc2_kicker: "ACQUISITION",
     svc2_h3: "Growth Sosial Organik",
     svc2_p: "Followers asli yang benar-benar konversi — lewat strategi konten, bukan bot atau audiens beli.",
+    svc3_kicker: "CONVERSION",
     svc3_h3: "Website yang Fokus Booking",
     svc3_p: "Bukan sekadar brosur cantik — halaman dan alur WhatsApp yang dirancang untuk mengubah pengunjung jadi pelanggan yang booking.",
+    svc4_kicker: "RETENTION",
     svc4_h3: "Sistem Loyalty &amp; Booking Berulang",
     svc4_p: "Poin, referral, dan alur retention WhatsApp — sistem yang sama seperti di balik Rumi Inner Circle.",
+    svc4b_kicker: "RETENTION",
+    svc4b_h3: "WhatsApp Business API &amp; Automation",
+    svc4b_p: "Integrasi WABA resmi dengan alur broadcast yang membawa pelanggan kembali — tanpa biaya iklan tambahan.",
+    svc5_kicker: "TECH &amp; SYSTEMS",
+    svc5_h3: "Sistem Custom &amp; Automation",
+    svc5_p: "Platform booking, dashboard member, dan automation bisnis — dibangun sendiri, bukan rakitan template.",
     faq_tag: "FAQ",
     faq_h2: "Sebelum booking call",
     faq_sub: "Jawaban langsung untuk pertanyaan yang biasa muncul sebelum kita ngobrol.",
