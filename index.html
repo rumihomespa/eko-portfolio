@@ -57,6 +57,11 @@ nav{
   font-weight:700;font-size:13px;transition:.28s
 }
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(16,217,163,.25)}
+.lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:20px;padding:3px}
+.lang-btn{background:transparent;border:none;color:var(--muted);font-size:11px;font-weight:700;padding:5px 10px;border-radius:16px;cursor:pointer;transition:.2s;font-family:inherit}
+.lang-btn.active{background:var(--green);color:#06140f}
+.lang-btn:not(.active):hover{color:var(--text)}
+@media(max-width:520px){.lang-btn{padding:5px 8px;font-size:10px}}
 
 /* HERO */
 .hero{
@@ -850,7 +855,13 @@ section[id]{scroll-margin-top:100px}
 <nav>
   <div class="nav-inner">
     <div class="logo">Eko<span>Bright</span></div>
-    <a href="#contact" class="nav-cta">Free Strategy Call</a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="id">ID</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Free Strategy Call</a>
+    </div>
   </div>
 </nav>
 
@@ -866,22 +877,22 @@ section[id]{scroll-margin-top:100px}
   <div class="hero-cursor-light" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <div class="eyebrow reveal visible"><span class="pulse-dot"></span> Now accepting new clients</div>
-      <h1 class="reveal visible">I help local brands grow with <span class="grad">real growth marketing</span> — from the first ad to the customer who comes back.</h1>
-      <p class="hero-sub reveal visible">Rumi Home Spa is where I designed and tested this growth system with my own money — from zero storefront to <b>800+ bookings every month</b>. Through Trigia Digital, I now run the same system — acquisition, conversion, and retention working together — for other local brands.</p>
+      <div class="eyebrow reveal visible" data-i18n="hero_eyebrow"><span class="pulse-dot"></span> Now accepting new clients</div>
+      <h1 class="reveal visible" data-i18n="hero_h1">I help local brands grow with <span class="grad">real growth marketing</span> — from the first ad to the customer who comes back.</h1>
+      <p class="hero-sub reveal visible" data-i18n="hero_sub">Rumi Home Spa is where I designed and tested this growth system with my own money — from zero storefront to <b>800+ bookings every month</b>. Through Trigia Digital, I now run the same system — acquisition, conversion, and retention working together — for other local brands.</p>
       <div class="btn-row reveal visible">
-        <a href="#contact" class="btn-primary">Book Free 30-min Call</a>
-        <a href="#work" class="btn-ghost">See the Proof ↓</a>
+        <a href="#contact" class="btn-primary" data-i18n="hero_btn_primary">Book Free 30-min Call</a>
+        <a href="#work" class="btn-ghost" data-i18n="hero_btn_ghost">See the Proof ↓</a>
       </div>
-      <div class="operator-line reveal visible"><b>PROVEN-FIRST</b><span>I build and test every method on my own business first — before I bring it to yours.</span></div>
+      <div class="operator-line reveal visible" data-i18n="operator_line"><b>PROVEN-FIRST</b><span>I've managed businesses to hundreds of millions IDR/month across wellness, F&amp;B, and skincare — before applying that experience to growth marketing for other brands.</span></div>
     </div>
     <div class="photo-wrap reveal visible">
-      <div class="photo-live"><span></span> LIVE FROM THE BUSINESS</div>
+      <div class="photo-live" data-i18n="photo_live"><span></span> LIVE FROM THE BUSINESS</div>
       <div class="photo-frame">
         <img class="eko-photo" src="images/eko-photo.webp" alt="Eko Bright — growth marketing partner for local brands">
       </div>
-      <div class="float-tag">GROWTH PARTNER</div>
-      <div class="photo-badge"><b>800+</b>bookings / month</div>
+      <div class="float-tag" data-i18n="float_tag">GROWTH PARTNER</div>
+      <div class="photo-badge" data-i18n="photo_badge"><b>800+</b>bookings / month</div>
     </div>
   </div>
 </header>
@@ -895,10 +906,10 @@ section[id]{scroll-margin-top:100px}
 
 <div class="container">
   <div class="stats">
-    <div class="stat reveal"><div class="num" data-count="800">0</div><div class="lbl">Bookings / Month</div></div>
-    <div class="stat reveal d1"><div class="num" data-count="95" data-suffix="%">0</div><div class="lbl">Customers From Online</div></div>
-    <div class="stat reveal d2"><div class="num" data-count="8500" data-prefix="$">$0</div><div class="lbl">Monthly Revenue (est.)</div></div>
-    <div class="stat reveal d3"><div class="num" data-count="0" data-prefix="$">$0</div><div class="lbl">Spent on Fake Followers</div></div>
+    <div class="stat reveal"><div class="num" data-count="800">0</div><div class="lbl" data-i18n="stat_lbl1">Bookings / Month</div></div>
+    <div class="stat reveal d1"><div class="num" data-count="95" data-suffix="%">0</div><div class="lbl" data-i18n="stat_lbl2">Customers From Online</div></div>
+    <div class="stat reveal d2"><div class="num" data-count="8500" data-prefix="$">$0</div><div class="lbl" data-i18n="stat_lbl3">Monthly Revenue (est.)</div></div>
+    <div class="stat reveal d3"><div class="num" data-count="0" data-prefix="$">$0</div><div class="lbl" data-i18n="stat_lbl4">Spent on Fake Followers</div></div>
   </div>
 
 </div>
@@ -908,10 +919,10 @@ section[id]{scroll-margin-top:100px}
     <div class="operator-stack reveal">
       <div class="stack-head">
         <div>
-          <div class="tag">The Growth Stack</div>
-          <h2>One system. Three jobs.</h2>
+          <div class="tag" data-i18n="stack_tag">The Growth Stack</div>
+          <h2 data-i18n="stack_h2">One system. Three jobs.</h2>
         </div>
-        <p>Acquire attention. Turn it into bookings. Bring customers back.</p>
+        <p data-i18n="stack_p">Acquire attention. Turn it into bookings. Bring customers back.</p>
       </div>
 
       <div class="stack-grid">
@@ -937,46 +948,46 @@ section[id]{scroll-margin-top:100px}
 
 <section id="work">
   <div class="container">
-    <div class="tag reveal">Case Study 01</div>
-    <h2 class="reveal">From zero to 800+ bookings — with no storefront</h2>
-    <p class="section-sub reveal">My first case study: Rumi Home Spa, the business where I built and tested this growth system with my own money — before bringing it to other brands.</p>
+    <div class="tag reveal" data-i18n="cs1_tag">Case Study 01</div>
+    <h2 class="reveal" data-i18n="cs1_h2">From zero to 800+ bookings — with no storefront</h2>
+    <p class="section-sub reveal" data-i18n="cs1_sub">My first case study: Rumi Home Spa, the business where I built and tested this growth system with my own money — before bringing it to other brands.</p>
 
     <div class="case reveal">
       <div class="case-content">
         <h3>Rumi Home Spa — Indonesia</h3>
-        <div class="case-label">The Challenge</div>
-        <p>Home spa services face a brutal trust barrier: "Is it safe? Are the therapists real professionals?" — with no physical storefront to reassure customers.</p>
-        <div class="case-label">What I Did</div>
+        <div class="case-label" data-i18n="cs1_label1">The Challenge</div>
+        <p data-i18n="cs1_challenge">Home spa services face a brutal trust barrier: "Is it safe? Are the therapists real professionals?" — with no physical storefront to reassure customers.</p>
+        <div class="case-label" data-i18n="cs1_label2">What I Did</div>
         <ul class="case-list">
-          <li>Built a trust-first website with frictionless WhatsApp booking</li>
-          <li>Ran Meta &amp; TikTok campaigns — creatives made in-house</li>
-          <li>Grew Instagram &amp; TikTok organically, zero fake followers</li>
-          <li>Engineered a repeat-booking loop via WhatsApp — retention without extra ad spend</li>
+          <li data-i18n="cs1_li1">Built a trust-first website with frictionless WhatsApp booking</li>
+          <li data-i18n="cs1_li2">Ran Meta &amp; TikTok campaigns — creatives made in-house</li>
+          <li data-i18n="cs1_li3">Grew Instagram &amp; TikTok organically, zero fake followers</li>
+          <li data-i18n="cs1_li4">Engineered a repeat-booking loop via WhatsApp — retention without extra ad spend</li>
         </ul>
-        <div class="case-label">The Results</div>
+        <div class="case-label" data-i18n="cs1_label3">The Results</div>
         <ul class="case-list">
-          <li><b>800+ treatments booked monthly</b>, consistently</li>
-          <li>~$8,500 USD monthly revenue, no storefront, no foot traffic</li>
-          <li>~95% of customers acquired through digital channels</li>
-          <li>Repeat customers rebooking via WhatsApp — no additional ad cost</li>
+          <li data-i18n="cs1_res1"><b>800+ treatments booked monthly</b>, consistently</li>
+          <li data-i18n="cs1_res2">~$8,500 USD monthly revenue, no storefront, no foot traffic</li>
+          <li data-i18n="cs1_res3">~95% of customers acquired through digital channels</li>
+          <li data-i18n="cs1_res4">Repeat customers rebooking via WhatsApp — no additional ad cost</li>
         </ul>
-        <a class="case-link" href="https://rumihomespa.com/" target="_blank" rel="noopener">Visit rumihomespa.com ↗</a>
+        <a class="case-link" href="https://rumihomespa.com/" target="_blank" rel="noopener" data-i18n="cs1_link">Visit rumihomespa.com ↗</a>
       </div>
       <div class="case-visual">
         <div class="phone">
           <div class="phone-screen">
             <div class="phone-header">
-              <div class="ph-name">💬 WhatsApp — Bookings</div>
-              <div class="ph-sub">live customer flow</div>
+              <div class="ph-name" data-i18n="chat_header">💬 WhatsApp — Bookings</div>
+              <div class="ph-sub" data-i18n="chat_sub">live customer flow</div>
             </div>
             <div class="chat-body">
-              <div class="msg in">Hi! Is the full body massage available today? 🙏</div>
-              <div class="msg out">Yes! 2 slots left today — 2PM or 4PM? 😊</div>
-              <div class="msg in">2PM please! At my home 🏠</div>
-              <div class="msg out booking">✅ Booked! Therapist confirmed. See you at 2PM!</div>
-              <div class="msg in">Thank you!! Second time booking, love the service ❤️</div>
+              <div class="msg in" data-i18n="chat_msg1">Hi! Is the full body massage available today? 🙏</div>
+              <div class="msg out" data-i18n="chat_msg2">Yes! 2 slots left today — 2PM or 4PM? 😊</div>
+              <div class="msg in" data-i18n="chat_msg3">2PM please! At my home 🏠</div>
+              <div class="msg out booking" data-i18n="chat_msg4">✅ Booked! Therapist confirmed. See you at 2PM!</div>
+              <div class="msg in" data-i18n="chat_msg5">Thank you!! Second time booking, love the service ❤️</div>
             </div>
-            <div class="phone-stat"><b>800+</b><span>treatments booked / month</span></div>
+            <div class="phone-stat" data-i18n="phone_stat"><b>800+</b><span>treatments booked / month</span></div>
           </div>
         </div>
       </div>
@@ -991,11 +1002,11 @@ section[id]{scroll-margin-top:100px}
     <div class="evidence-wrap reveal">
       <div class="evidence-head">
         <div>
-          <div class="evidence-kicker">Evidence from the business</div>
-          <div class="evidence-title">This isn't a portfolio mockup. It's a business I actually operate.</div>
+          <div class="evidence-kicker" data-i18n="ev_kicker">Evidence from the business</div>
+          <div class="evidence-title" data-i18n="ev_title">This isn't a portfolio mockup. It's a business I actually operate.</div>
         </div>
         <div class="evidence-note">
-          Real snapshots from Rumi Home Spa's live website and Instagram — grown to 19K organic followers, zero paid follower growth — the environment where the playbook is actually used.
+          <span data-i18n="ev_note">Real snapshots from Rumi Home Spa's live website and Instagram — grown to 19K organic followers, zero paid follower growth — the environment where the playbook is actually used.</span>
         </div>
       </div>
 
@@ -1003,15 +1014,15 @@ section[id]{scroll-margin-top:100px}
         <a class="evidence-card reveal" href="https://rumihomespa.com" target="_blank" rel="noopener">
           <img src="images/evidence-rumihomespa.webp" alt="Rumi Home Spa live website">
           <div class="evidence-overlay">
-            <div><span>Live website</span><br><b>rumihomespa.com</b></div>
-            <div class="evidence-link">OPEN ↗</div>
+            <div><span data-i18n="ev_live_label">Live website</span><br><b>rumihomespa.com</b></div>
+            <div class="evidence-link" data-i18n="ev_open">OPEN ↗</div>
           </div>
         </a>
 
         <div class="evidence-card ig reveal d1">
           <img src="images/evidence-instagram.webp" alt="Rumi Home Spa Instagram presence">
           <div class="evidence-overlay">
-            <div><span>Social proof</span><br><b>@rumi.homespa</b></div>
+            <div><span data-i18n="ev_social_label">Social proof</span><br><b>@rumi.homespa</b></div>
             <div class="evidence-link">INSTAGRAM</div>
           </div>
         </div>
@@ -1022,9 +1033,9 @@ section[id]{scroll-margin-top:100px}
 
 <section id="member-platform">
   <div class="container">
-    <div class="tag reveal">Case Study 02</div>
-    <h2 class="reveal">Building the next layer after the booking.</h2>
-    <p class="section-sub reveal">
+    <div class="tag reveal" data-i18n="cs2_tag">Case Study 02</div>
+    <h2 class="reveal" data-i18n="cs2_h2">Building the next layer after the booking.</h2>
+    <p class="section-sub reveal" data-i18n="cs2_sub">
       The retention layer of that same system — Rumi Inner Circle — designed to turn one-time customers into repeat ones, and built to adapt for other local brands.
     </p>
 
@@ -1035,30 +1046,30 @@ section[id]{scroll-margin-top:100px}
           <h3>Rumi Inner Circle — Member Platform</h3>
         </div>
 
-        <div class="case-label">The Challenge</div>
-        <p>
+        <div class="case-label" data-i18n="cs2_label1">The Challenge</div>
+        <p data-i18n="cs2_challenge">
           The booking experience was only the first step. Rumi also needed a dedicated digital
           member experience to strengthen retention, reward loyal customers, and give repeat
           customers a reason to stay connected with the brand.
         </p>
 
-        <div class="case-label">What I Built</div>
+        <div class="case-label" data-i18n="cs2_label2">What I Built</div>
         <ul class="case-list">
-          <li>Dedicated member platform with Sign In and Join Now flows</li>
-          <li>Welcome rewards and a points-based member journey</li>
-          <li>Five membership tiers: Bronze, Silver, Gold, Platinum, and Diamond</li>
-          <li>Referral, birthday, and wedding-anniversary rewards</li>
-          <li>Treatment history, therapist ratings, and digital member card</li>
+          <li data-i18n="cs2_li1">Dedicated member platform with Sign In and Join Now flows</li>
+          <li data-i18n="cs2_li2">Welcome rewards and a points-based member journey</li>
+          <li data-i18n="cs2_li3">Five membership tiers: Bronze, Silver, Gold, Platinum, and Diamond</li>
+          <li data-i18n="cs2_li4">Referral, birthday, and wedding-anniversary rewards</li>
+          <li data-i18n="cs2_li5">Treatment history, therapist ratings, and digital member card</li>
         </ul>
 
-        <div class="case-label">The Strategy</div>
-        <p>
+        <div class="case-label" data-i18n="cs2_label3">The Strategy</div>
+        <p data-i18n="cs2_strategy">
           Instead of treating the website as the end of the funnel, the member platform creates
           a second digital layer — one focused on loyalty, repeat visits, and long-term customer value.
         </p>
 
         <a class="case-link" href="https://member.rumihomespa.com/" target="_blank" rel="noopener">
-          Explore member.rumihomespa.com ↗
+          <span data-i18n="cs2_link">Explore member.rumihomespa.com ↗</span>
         </a>
       </div>
 
@@ -1083,9 +1094,9 @@ section[id]{scroll-margin-top:100px}
 
 <section id="selected-builds">
   <div class="container">
-    <div class="tag reveal">Independent Builds</div>
-    <h2 class="reveal">More proof of how I think.</h2>
-    <p class="section-sub reveal">
+    <div class="tag reveal" data-i18n="sb_tag">Independent Builds</div>
+    <h2 class="reveal" data-i18n="sb_h2">More proof of how I think.</h2>
+    <p class="section-sub reveal" data-i18n="sb_sub">
       A selection of independent builds from my studio — showing how I approach conversion,
       digital products, automation, and customer journeys across different business models.
     </p>
@@ -1094,62 +1105,68 @@ section[id]{scroll-margin-top:100px}
       <article class="proof-card reveal">
         <div class="proof-top"><span>F&amp;B / Coffee</span><span class="proof-mark">01</span></div>
         <h3>Seduh Coffee Co.</h3>
-        <p>Brand and website concept with an online ordering flow integrated directly with WhatsApp.</p>
+        <p data-i18n="proof1_p">Brand and website concept with an online ordering flow integrated directly with WhatsApp.</p>
         <div class="proof-outcome">Brand → order flow → WhatsApp</div>
       </article>
 
       <article class="proof-card reveal d1">
         <div class="proof-top"><span>AI / Customer Service</span><span class="proof-mark">02</span></div>
         <h3>BALAS</h3>
-        <p>AI agent concept built around automatic replies, follow-ups, and lead qualification across WhatsApp, Instagram, and web.</p>
+        <p data-i18n="proof2_p">AI agent concept built around automatic replies, follow-ups, and lead qualification across WhatsApp, Instagram, and web.</p>
         <div class="proof-outcome">Reply → qualify → follow up</div>
       </article>
 
       <article class="proof-card reveal d2">
         <div class="proof-top"><span>Growth / Marketing</span><span class="proof-mark">03</span></div>
         <h3>Growth Engine</h3>
-        <p>Growth operating-system concept connecting customer data, campaigns, and content to acquisition, reactivation, and retention.</p>
+        <p data-i18n="proof3_p">Growth operating-system concept connecting customer data, campaigns, and content to acquisition, reactivation, and retention.</p>
         <div class="proof-outcome">Acquire → reactivate → retain</div>
       </article>
     </div>
 
     <div class="proof-note reveal">
-      <span>TRIGIA prototype work — the digital studio behind this growth system</span>
-      <a href="https://trigia.id/prototype" target="_blank" rel="noopener">Explore the full prototype collection ↗</a>
+      <span data-i18n="proof_note">TRIGIA prototype work — the digital studio behind this growth system</span>
+      <a href="https://trigia.id/prototype" target="_blank" rel="noopener" data-i18n="proof_note_link">Explore the full prototype collection ↗</a>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="tag reveal">Services</div>
-    <h2 class="reveal">A full growth system, not just ads</h2>
-    <p class="section-sub reveal">Everything below is organized around one funnel: get attention, turn it into customers, keep them coming back. Performance ads bring customers in — growth marketing is what makes them stay, and bring others with them.</p>
+    <div class="tag reveal" data-i18n="svc_tag">Services</div>
+    <h2 class="reveal" data-i18n="svc_h2">A full growth system, not just ads</h2>
+    <p class="section-sub reveal" data-i18n="services_sub">Some brands need to be built before they can grow. Everything below starts there — from brand foundation, to getting attention, turning it into customers, and keeping them coming back.</p>
 
     <div class="services">
       <div class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4M6 4h11l-3 4 3 4H6"/></svg></div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:#fbbf24;font-weight:800;margin-bottom:8px" data-i18n="svc0_kicker">BRAND FOUNDATION</div>
+        <h3 data-i18n="svc0_h3">From Zero to a Business That Runs</h3>
+        <p data-i18n="svc0_p">For businesses that don't exist yet — naming, unique brand identity, trademark registration, and the first marketing push to get it moving.</p>
+      </div>
+      <div class="service reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5V10l11-4v11L4 13.5Z"/><path d="M15 9.2c2.2.2 4 2 4 4.3s-1.8 4.1-4 4.3M7 14l1.5 5"/></svg></div>
-        <div style="font-size:9px;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:8px">ACQUISITION</div>
-        <h3>Meta &amp; TikTok Ads</h3>
-        <p>Strategy, targeting &amp; ad creatives — tested first on my own ad accounts before running yours.</p>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:8px" data-i18n="svc1_kicker">ACQUISITION</div>
+        <h3 data-i18n="svc1_h3">Meta &amp; TikTok Ads</h3>
+        <p data-i18n="svc1_p">Strategy, targeting &amp; ad creatives — tested first on my own ad accounts before running yours.</p>
       </div>
       <div class="service reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="3" width="11" height="18" rx="2"/><path d="M10 18h4"/></svg></div>
         <div style="font-size:9px;letter-spacing:1.5px;color:var(--green);font-weight:800;margin-bottom:8px">ACQUISITION</div>
-        <h3>Organic Social Growth</h3>
-        <p>Real followers who actually convert — through content strategy, not bots or bought audiences.</p>
+        <h3 data-i18n="svc2_h3">Organic Social Growth</h3>
+        <p data-i18n="svc2_p">Real followers who actually convert — through content strategy, not bots or bought audiences.</p>
       </div>
       <div class="service reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.5 3.5 5.3 3.5 8.5S14.3 18 12 20.5M12 3.5C9.7 6 8.5 8.8 8.5 12s1.2 6 3.5 8.5"/></svg></div>
         <div style="font-size:9px;letter-spacing:1.5px;color:var(--purple);font-weight:800;margin-bottom:8px">CONVERSION</div>
-        <h3>Booking-Driven Websites</h3>
-        <p>Not pretty brochures — pages and WhatsApp flows engineered to turn visitors into booked customers.</p>
+        <h3 data-i18n="svc3_h3">Booking-Driven Websites</h3>
+        <p data-i18n="svc3_p">Not pretty brochures — pages and WhatsApp flows engineered to turn visitors into booked customers.</p>
       </div>
       <div class="service reveal d3">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h11l-2.5-2.5M19 16H8l2.5 2.5"/><path d="M16 8l2.5 2.5L16 13M8 16l-2.5-2.5L8 11"/></svg></div>
         <div style="font-size:9px;letter-spacing:1.5px;color:var(--pink);font-weight:800;margin-bottom:8px">RETENTION</div>
-        <h3>Loyalty &amp; Repeat-Booking Systems</h3>
-        <p>Points, referrals, and WhatsApp retention flows — the same system behind Rumi Inner Circle.</p>
+        <h3 data-i18n="svc4_h3">Loyalty &amp; Repeat-Booking Systems</h3>
+        <p data-i18n="svc4_p">Points, referrals, and WhatsApp retention flows — the same system behind Rumi Inner Circle.</p>
       </div>
     </div>
   </div>
@@ -1158,33 +1175,33 @@ section[id]{scroll-margin-top:100px}
 
 <section id="faq">
   <div class="container">
-    <div class="tag reveal">FAQ</div>
-    <h2 class="reveal">Before you book the call</h2>
-    <p class="section-sub reveal">Straight answers to what people usually ask before we talk.</p>
+    <div class="tag reveal" data-i18n="faq_tag">FAQ</div>
+    <h2 class="reveal" data-i18n="faq_h2">Before you book the call</h2>
+    <p class="section-sub reveal" data-i18n="faq_sub">Straight answers to what people usually ask before we talk.</p>
     <div class="faq-list">
       <details class="faq-item reveal">
-        <summary>How much does it cost?</summary>
-        <p>Every business has different needs, so I don't post generic pricing here. On the free call, I listen to your situation first, then give a proposal that fits — not a template package.</p>
+        <summary data-i18n="faq1_q">How much does it cost?</summary>
+        <p data-i18n="faq1_a">Every business has different needs, so I don't post generic pricing here. On the free call, I listen to your situation first, then give a proposal that fits — not a template package.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>How soon will I see results?</summary>
-        <p>For quick fixes (landing pages, WhatsApp funnels), results usually show within the first 2-4 weeks. Organic growth and retention systems need 2-3 months of consistency before they stabilize.</p>
+        <summary data-i18n="faq2_q">How soon will I see results?</summary>
+        <p data-i18n="faq2_a">For quick fixes (landing pages, WhatsApp funnels), results usually show within the first 2-4 weeks. Organic growth and retention systems need 2-3 months of consistency before they stabilize.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>Is there a minimum contract?</summary>
-        <p>I prefer to prove results first through a clearly-scoped initial project, then move to a monthly retainer if it's a good fit. No binding annual contracts upfront.</p>
+        <summary data-i18n="faq3_q">Is there a minimum contract?</summary>
+        <p data-i18n="faq3_a">I prefer to prove results first through a clearly-scoped initial project, then move to a monthly retainer if it's a good fit. No binding annual contracts upfront.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>What if the results don't match expectations?</summary>
-        <p>We set realistic targets upfront based on your business's actual situation. If something's off midway, I report it openly and we adjust strategy together — not wait until the contract ends to discuss it.</p>
+        <summary data-i18n="faq4_q">What if the results don't match expectations?</summary>
+        <p data-i18n="faq4_a">We set realistic targets upfront based on your business's actual situation. If something's off midway, I report it openly and we adjust strategy together — not wait until the contract ends to discuss it.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>Do you work alone or with a team?</summary>
-        <p>I personally handle the core strategy and execution, supported by a small team for content production and development when needed. No handoff to an account manager who doesn't know your business details.</p>
+        <summary data-i18n="faq5_q">Do you work alone or with a team?</summary>
+        <p data-i18n="faq5_a">I personally handle the core strategy and execution, supported by a small team for content production and development when needed. No handoff to an account manager who doesn't know your business details.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>Can you work with businesses outside Indonesia?</summary>
-        <p>My current focus is local Indonesian businesses, especially home services, because this playbook is most proven in this market. For outside Indonesia, let's discuss fit on the free call.</p>
+        <summary data-i18n="faq6_q">Can you work with businesses outside Indonesia?</summary>
+        <p data-i18n="faq6_a">My current focus is local Indonesian businesses, especially home services, because this playbook is most proven in this market. For outside Indonesia, let's discuss fit on the free call.</p>
       </details>
     </div>
   </div>
@@ -1192,30 +1209,30 @@ section[id]{scroll-margin-top:100px}
 
 <section id="how-i-work">
   <div class="container">
-    <div class="tag reveal">How I Work</div>
-    <h2 class="reveal">No handoff. No black box.</h2>
-    <p class="section-sub reveal">You work directly with the person who built and runs the playbook.</p>
+    <div class="tag reveal" data-i18n="how_tag">How I Work</div>
+    <h2 class="reveal" data-i18n="how_h2">No handoff. No black box.</h2>
+    <p class="section-sub reveal" data-i18n="how_sub">You work directly with the person who built and runs the playbook.</p>
 
     <div class="how-grid">
       <article class="how-card reveal">
         <div class="how-line"></div>
-        <div class="how-num">01 — DIAGNOSE</div>
-        <h3>Find the leak.</h3>
-        <p>I look at where attention is turning into friction — your website, content, ads, booking flow, or follow-up.</p>
+        <div class="how-num" data-i18n="how1_num">01 — DIAGNOSE</div>
+        <h3 data-i18n="how1_h3">Find the leak.</h3>
+        <p data-i18n="how1_p">I look at where attention is turning into friction — your website, content, ads, booking flow, or follow-up.</p>
       </article>
 
       <article class="how-card reveal d1">
         <div class="how-line"></div>
-        <div class="how-num">02 — BUILD</div>
-        <h3>Fix what matters.</h3>
-        <p>We build the highest-impact piece first, with a clear job: more qualified enquiries, easier booking, or stronger retention.</p>
+        <div class="how-num" data-i18n="how2_num">02 — BUILD</div>
+        <h3 data-i18n="how2_h3">Fix what matters.</h3>
+        <p data-i18n="how2_p">We build the highest-impact piece first, with a clear job: more qualified enquiries, easier booking, or stronger retention.</p>
       </article>
 
       <article class="how-card reveal d2">
         <div class="how-line"></div>
-        <div class="how-num">03 — OPTIMIZE</div>
-        <h3>Keep improving.</h3>
-        <p>Once it's live, we learn from what customers actually do and keep tightening the system around real behaviour.</p>
+        <div class="how-num" data-i18n="how3_num">03 — OPTIMIZE</div>
+        <h3 data-i18n="how3_h3">Keep improving.</h3>
+        <p data-i18n="how3_p">Once it's live, we learn from what customers actually do and keep tightening the system around real behaviour.</p>
       </article>
     </div>
   </div>
@@ -1224,24 +1241,24 @@ section[id]{scroll-margin-top:100px}
 <section>
   <div class="container">
     <div class="quote-box reveal">
-      <p>"I don't sell marketing theory. <span>I build and test every method on my own business first, with my own money, before I bring it to yours.</span> When you work with me, you get a system that's already proven — applied to your brand."</p>
+      <p data-i18n="quote">"I don't sell marketing theory. <span>I build and test every method on my own business first, with my own money, before I bring it to yours.</span> When you work with me, you get a system that's already proven — applied to your brand."</p>
     </div>
   </div>
 </section>
 
 <section class="cta" id="contact">
   <div class="container">
-    <h2 class="reveal">Let's build your growth system</h2>
-    <p class="reveal">Free 30-minute call — you'll get 2-3 specific improvements for your business, whether we work together or not.</p>
+    <h2 class="reveal" data-i18n="cta_h2">Let's build your growth system</h2>
+    <p class="reveal" data-i18n="cta_p">Free 30-minute call — you'll get 2-3 specific improvements for your business, whether we work together or not.</p>
     <div class="btn-row reveal" style="justify-content:center">
-      <a href="https://calendly.com/ekobright/30min" class="btn-primary">Book a Free 30-min Call</a>
-      <a href="https://wa.me/6281232845169" class="btn-ghost">💬 WhatsApp Me</a>
-      <a href="#" id="email-cta" class="btn-ghost">✉️ Email Me</a>
+      <a href="https://calendly.com/ekobright/30min" class="btn-primary" data-i18n="cta_btn1">Book a Free 30-min Call</a>
+      <a href="https://wa.me/6281232845169" class="btn-ghost" data-i18n="cta_btn2">💬 WhatsApp Me</a>
+      <a href="#" id="email-cta" class="btn-ghost" data-i18n="cta_btn3">✉️ Email Me</a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Eko Bright — Growth Marketer & Website Builder, Indonesia</footer>
+<footer data-i18n="footer">© 2026 Eko Bright — Growth Marketer & Website Builder, Indonesia</footer>
 
 <script>
 const obs = new IntersectionObserver(entries=>{
@@ -1375,5 +1392,159 @@ document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
   if(link){ link.href = 'mailto:' + user + '@' + domain; }
 })();
 </script>
+
+<script>
+const i18nDict = {
+  en: {},
+  id: {
+    nav_cta: "Konsultasi Gratis",
+    hero_eyebrow: '<span class="pulse-dot"></span> Sedang menerima klien baru',
+    hero_h1: 'Saya membantu brand lokal tumbuh dengan <span class="grad">growth marketing yang nyata</span> — dari iklan pertama sampai pelanggan yang kembali lagi.',
+    hero_sub: "Rumi Home Spa adalah tempat saya merancang dan menguji sistem growth ini dengan uang saya sendiri — dari tanpa toko fisik sampai <b>800+ booking setiap bulan</b>. Melalui Trigia Digital, saya sekarang menjalankan sistem yang sama — acquisition, conversion, dan retention yang bekerja bersama — untuk brand lokal lainnya.",
+    hero_btn_primary: "Booking Call Gratis 30 Menit",
+    hero_btn_ghost: "Lihat Buktinya ↓",
+    operator_line: '<b>TERBUKTI DULU</b><span>Saya pernah mengelola bisnis dengan omset ratusan juta rupiah per bulan di sektor wellness, F&amp;B, dan skincare — sebelum menerapkan pengalaman itu untuk growth marketing brand lain.</span>',
+    photo_live: "<span></span> LANGSUNG DARI BISNISNYA",
+    float_tag: "GROWTH PARTNER",
+    photo_badge: "<b>800+</b>booking / bulan",
+    stat_lbl1: "Booking / Bulan",
+    stat_lbl2: "Pelanggan Dari Online",
+    stat_lbl3: "Pendapatan Bulanan (estimasi)",
+    stat_lbl4: "Dana untuk Followers Palsu",
+    stack_tag: "Growth Stack-nya",
+    stack_h2: "Satu sistem. Tiga tugas.",
+    stack_p: "Tarik perhatian. Ubah jadi booking. Bawa pelanggan kembali.",
+    cs1_tag: "Studi Kasus 01",
+    cs1_h2: "Dari nol sampai 800+ booking — tanpa toko fisik",
+    cs1_sub: "Studi kasus pertama saya: Rumi Home Spa, bisnis tempat saya membangun dan menguji sistem growth ini dengan uang saya sendiri — sebelum membawanya ke brand lain.",
+    cs1_label1: "Tantangannya",
+    cs1_challenge: 'Layanan home spa menghadapi hambatan trust yang berat: "Apakah aman? Apakah terapisnya benar-benar profesional?" — tanpa toko fisik yang bisa menenangkan calon pelanggan.',
+    cs1_label2: "Yang Saya Lakukan",
+    cs1_li1: "Membangun website yang mengutamakan trust dengan booking WhatsApp yang mudah",
+    cs1_li2: "Menjalankan campaign Meta &amp; TikTok — materi iklan dibuat sendiri",
+    cs1_li3: "Membesarkan Instagram &amp; TikTok secara organik, tanpa followers palsu",
+    cs1_li4: "Merancang siklus booking berulang lewat WhatsApp — retention tanpa biaya iklan tambahan",
+    cs1_label3: "Hasilnya",
+    cs1_res1: "<b>800+ treatment dibooking setiap bulan</b>, secara konsisten",
+    cs1_res2: "~$8,500 USD pendapatan bulanan, tanpa toko fisik, tanpa foot traffic",
+    cs1_res3: "~95% pelanggan diperoleh lewat kanal digital",
+    cs1_res4: "Pelanggan repeat booking ulang lewat WhatsApp — tanpa biaya iklan tambahan",
+    cs1_link: "Kunjungi rumihomespa.com ↗",
+    chat_header: "💬 WhatsApp — Booking",
+    chat_sub: "alur chat pelanggan asli",
+    chat_msg1: "Halo! Full body massage hari ini masih ada slot? 🙏",
+    chat_msg2: "Ada! Tersisa 2 slot hari ini — jam 2 siang atau jam 4 sore? 😊",
+    chat_msg3: "Jam 2 siang ya! Di rumah saya 🏠",
+    chat_msg4: "✅ Sudah dibooking! Terapis sudah dikonfirmasi. Sampai jumpa jam 2!",
+    chat_msg5: "Terima kasih!! Ini booking kedua saya, suka banget sama layanannya ❤️",
+    phone_stat: "<b>800+</b><span>treatment dibooking / bulan</span>",
+    ev_kicker: "Bukti dari bisnisnya langsung",
+    ev_title: "Ini bukan mockup portofolio. Ini bisnis yang benar-benar saya jalankan.",
+    ev_note: "Tangkapan layar asli dari website dan Instagram Rumi Home Spa — tumbuh sampai 19K followers organik, tanpa followers berbayar — lingkungan tempat playbook ini benar-benar dipakai.",
+    ev_live_label: "Website live",
+    ev_open: "BUKA ↗",
+    ev_social_label: "Bukti sosial",
+    cs2_tag: "Studi Kasus 02",
+    cs2_h2: "Membangun lapisan berikutnya setelah booking.",
+    cs2_sub: "Lapisan retention dari sistem yang sama — Rumi Inner Circle — dirancang untuk mengubah pelanggan sekali datang jadi pelanggan yang kembali, dan dibangun agar bisa disesuaikan untuk brand lokal lain.",
+    cs2_label1: "Tantangannya",
+    cs2_challenge: "Pengalaman booking hanyalah langkah pertama. Rumi juga butuh pengalaman member digital khusus untuk memperkuat retention, memberi reward ke pelanggan loyal, dan memberi alasan bagi pelanggan repeat untuk tetap terhubung dengan brand.",
+    cs2_label2: "Yang Saya Bangun",
+    cs2_li1: "Platform member khusus dengan alur Sign In dan Join Now",
+    cs2_li2: "Welcome reward dan journey member berbasis poin",
+    cs2_li3: "Lima tingkatan membership: Bronze, Silver, Gold, Platinum, dan Diamond",
+    cs2_li4: "Reward referral, ulang tahun, dan anniversary pernikahan",
+    cs2_li5: "Riwayat treatment, rating terapis, dan kartu member digital",
+    cs2_label3: "Strateginya",
+    cs2_strategy: "Daripada menjadikan website sebagai ujung funnel, platform member ini menciptakan lapisan digital kedua — yang fokus pada loyalty, kunjungan berulang, dan nilai pelanggan jangka panjang.",
+    cs2_link: "Jelajahi member.rumihomespa.com ↗",
+    sb_tag: "Proyek Independen",
+    sb_h2: "Bukti lain cara saya berpikir.",
+    sb_sub: "Beberapa proyek independen dari studio saya — menunjukkan cara saya mendekati conversion, produk digital, automation, dan customer journey di berbagai model bisnis.",
+    proof1_p: "Konsep brand dan website dengan alur order online yang terhubung langsung ke WhatsApp.",
+    proof2_p: "Konsep AI agent untuk balasan otomatis, follow-up, dan kualifikasi lead di WhatsApp, Instagram, dan web.",
+    proof3_p: "Konsep growth operating-system yang menghubungkan data pelanggan, campaign, dan konten ke acquisition, reactivation, dan retention.",
+    proof_note: "Hasil prototipe TRIGIA — studio digital di balik sistem growth ini",
+    proof_note_link: "Jelajahi koleksi prototipe lengkapnya ↗",
+    svc_tag: "Layanan",
+    svc_h2: "Sistem growth yang lengkap, bukan cuma iklan",
+    services_sub: "Beberapa brand perlu dibangun dulu sebelum bisa tumbuh. Semuanya di bawah ini dimulai dari sana — dari brand foundation, menarik perhatian, mengubahnya jadi pelanggan, sampai menjaga mereka tetap kembali.",
+    svc0_kicker: "BRAND FOUNDATION",
+    svc0_h3: "Dari Nol Sampai Bisnis Berjalan",
+    svc0_p: "Untuk bisnis yang belum ada sama sekali — penentuan nama, identitas brand yang unik, pendaftaran merek, dan dorongan marketing pertama agar bisnisnya mulai berjalan.",
+    svc1_kicker: "ACQUISITION",
+    svc1_h3: "Meta &amp; TikTok Ads",
+    svc1_p: "Strategi, targeting, dan materi iklan — diuji dulu di akun iklan saya sendiri sebelum dijalankan di akun Anda.",
+    svc2_h3: "Growth Sosial Organik",
+    svc2_p: "Followers asli yang benar-benar konversi — lewat strategi konten, bukan bot atau audiens beli.",
+    svc3_h3: "Website yang Fokus Booking",
+    svc3_p: "Bukan sekadar brosur cantik — halaman dan alur WhatsApp yang dirancang untuk mengubah pengunjung jadi pelanggan yang booking.",
+    svc4_h3: "Sistem Loyalty &amp; Booking Berulang",
+    svc4_p: "Poin, referral, dan alur retention WhatsApp — sistem yang sama seperti di balik Rumi Inner Circle.",
+    faq_tag: "FAQ",
+    faq_h2: "Sebelum booking call",
+    faq_sub: "Jawaban langsung untuk pertanyaan yang biasa muncul sebelum kita ngobrol.",
+    faq1_q: "Berapa biayanya?",
+    faq1_a: "Setiap bisnis punya kebutuhan berbeda, jadi saya tidak memasang harga generik di sini. Di call gratis, saya dengarkan situasi Anda dulu, lalu kasih proposal yang sesuai — bukan paket template.",
+    faq2_q: "Seberapa cepat hasilnya terlihat?",
+    faq2_a: "Untuk perbaikan cepat (landing page, funnel WhatsApp), hasil biasanya terlihat dalam 2-4 minggu pertama. Growth organik dan sistem retention butuh 2-3 bulan konsistensi sebelum stabil.",
+    faq3_q: "Ada kontrak minimum?",
+    faq3_a: "Saya lebih suka membuktikan hasil dulu lewat proyek awal yang scope-nya jelas, lalu lanjut ke retainer bulanan kalau cocok. Tidak ada kontrak tahunan yang mengikat di awal.",
+    faq4_q: "Bagaimana kalau hasilnya tidak sesuai ekspektasi?",
+    faq4_a: "Kita tetapkan target yang realistis di awal berdasarkan situasi bisnis Anda yang sebenarnya. Kalau di tengah jalan ada yang kurang pas, saya laporkan secara terbuka dan kita sesuaikan strategi bersama — tidak menunggu kontrak selesai untuk membahasnya.",
+    faq5_q: "Anda kerja sendiri atau dengan tim?",
+    faq5_a: "Saya pegang langsung strategi inti dan eksekusinya, dibantu tim kecil untuk produksi konten dan development saat diperlukan. Tidak ada handoff ke account manager yang tidak tahu detail bisnis Anda.",
+    faq6_q: "Bisa kerja dengan bisnis di luar Indonesia?",
+    faq6_a: "Fokus saya saat ini adalah bisnis lokal Indonesia, terutama home services, karena playbook ini paling terbukti di pasar ini. Untuk di luar Indonesia, mari kita diskusikan kecocokannya di call gratis.",
+    how_tag: "Cara Saya Bekerja",
+    how_h2: "Tanpa handoff. Tanpa black box.",
+    how_sub: "Anda bekerja langsung dengan orang yang membangun dan menjalankan playbook-nya.",
+    how1_num: "01 — DIAGNOSA",
+    how1_h3: "Temukan kebocorannya.",
+    how1_p: "Saya cek di mana perhatian berubah jadi friksi — website, konten, iklan, alur booking, atau follow-up Anda.",
+    how2_num: "02 — BANGUN",
+    how2_h3: "Perbaiki yang penting.",
+    how2_p: "Kita bangun bagian yang paling berdampak dulu, dengan tujuan jelas: lebih banyak calon pelanggan berkualitas, booking lebih mudah, atau retention yang lebih kuat.",
+    how3_num: "03 — OPTIMASI",
+    how3_h3: "Terus diperbaiki.",
+    how3_p: "Setelah live, kita pelajari apa yang benar-benar dilakukan pelanggan dan terus menyempurnakan sistem berdasarkan perilaku nyata.",
+    quote: '"Saya tidak menjual teori marketing. <span>Saya membangun dan menguji setiap metode di bisnis saya sendiri dulu, dengan uang saya sendiri, sebelum saya bawa ke bisnis Anda.</span> Saat Anda bekerja dengan saya, Anda mendapat sistem yang sudah terbukti — diterapkan untuk brand Anda."',
+    cta_h2: "Yuk bangun sistem growth Anda",
+    cta_p: "Call gratis 30 menit — Anda akan dapat 2-3 perbaikan spesifik untuk bisnis Anda, baik kita akhirnya kerja sama atau tidak.",
+    cta_btn1: "Booking Call Gratis 30 Menit",
+    cta_btn2: "💬 WhatsApp Saya",
+    cta_btn3: "✉️ Email Saya",
+    footer: "© 2026 Eko Bright — Growth Marketer &amp; Pembangun Website, Indonesia"
+  }
+};
+
+function ekoApplyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    const val = i18nDict[lang] && i18nDict[lang][key];
+    if(val !== undefined) el.innerHTML = val;
+    else if(lang === 'en' && el.dataset.i18nEnCache) el.innerHTML = el.dataset.i18nEnCache;
+  });
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try{ localStorage.setItem('eko_lang', lang); }catch(e){}
+}
+
+(function ekoInitLang(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    el.dataset.i18nEnCache = el.innerHTML;
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=> ekoApplyLang(btn.dataset.lang));
+  });
+  let saved = null;
+  try{ saved = localStorage.getItem('eko_lang'); }catch(e){}
+  const browserLang = (navigator.language||'en').toLowerCase().startsWith('id') ? 'id' : 'en';
+  ekoApplyLang(saved || browserLang);
+})();
+</script>
+
 </body>
 </html>
