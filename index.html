@@ -239,6 +239,7 @@ h2{font-size:clamp(28px,3.8vw,44px);font-weight:800;letter-spacing:-1.6px;line-h
 
 /* SERVICES */
 .services{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.services .service:last-child{grid-column:1 / -1}
 .service{
   background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;
   transition:.35s;position:relative;overflow:hidden
@@ -1220,10 +1221,6 @@ section[id]{scroll-margin-top:100px}
         <summary data-i18n="faq5_q">Do you work alone or with a team?</summary>
         <p data-i18n="faq5_a">I personally handle the core strategy and execution, supported by a small team for content production and development when needed. No handoff to an account manager who doesn't know your business details.</p>
       </details>
-      <details class="faq-item reveal">
-        <summary data-i18n="faq6_q">Can you work with businesses outside Indonesia?</summary>
-        <p data-i18n="faq6_a">My current focus is local Indonesian businesses, especially home services, because this playbook is most proven in this market. For outside Indonesia, let's discuss fit on the free call.</p>
-      </details>
     </div>
   </div>
 </section>
@@ -1528,8 +1525,6 @@ const i18nDict = {
     faq4_a: "Kita tetapkan target yang realistis di awal berdasarkan situasi bisnis Anda yang sebenarnya. Kalau di tengah jalan ada yang kurang pas, saya laporkan secara terbuka dan kita sesuaikan strategi bersama — tidak menunggu kontrak selesai untuk membahasnya.",
     faq5_q: "Anda kerja sendiri atau dengan tim?",
     faq5_a: "Saya pegang langsung strategi inti dan eksekusinya, dibantu tim kecil untuk produksi konten dan development saat diperlukan. Tidak ada handoff ke account manager yang tidak tahu detail bisnis Anda.",
-    faq6_q: "Bisa kerja dengan bisnis di luar Indonesia?",
-    faq6_a: "Fokus saya saat ini adalah bisnis lokal Indonesia, terutama home services, karena playbook ini paling terbukti di pasar ini. Untuk di luar Indonesia, mari kita diskusikan kecocokannya di call gratis.",
     how_tag: "Cara Saya Bekerja",
     how_h2: "Tanpa handoff. Tanpa black box.",
     how_sub: "Anda bekerja langsung dengan orang yang membangun dan menjalankan playbook-nya.",
